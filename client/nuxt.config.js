@@ -1,5 +1,6 @@
 // const URL = 'localhost:3000';
-const URL = 'http://localhost:3000';
+// const URL = 'http://localhost:3000';
+const URL = "https://peppermintgalaga.herokuapp.com";
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -43,8 +44,9 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-      proxy: true,
-      baseURL: URL
+      // proxy: true,
+      baseURL: URL,
+      https: true
   },
 
   // Proxy configuration
@@ -62,6 +64,10 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   },
+
+  serverMiddleware: [
+    '~/server/server.js'
+  ],
 
   auth: {
     strategies: {
